@@ -17,4 +17,6 @@ public class Rota {
     @SequenceGenerator(name = "SEQ_ROTA", initialValue = 1, allocationSize = 1)
     @Column(name = "ID_ROTA")
     private Long id;
+
+
 }
