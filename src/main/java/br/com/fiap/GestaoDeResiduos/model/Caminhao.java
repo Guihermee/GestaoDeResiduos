@@ -1,29 +1,31 @@
 package br.com.fiap.GestaoDeResiduos.model;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Table(name = "T_CAMINHAO")
 @Getter
 @Setter
-@EqualsAndHashCode
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "T_CAMINHAO")
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Caminhao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CAMINHAO")
-    @SequenceGenerator(name = "SEQ_CAMINHAO", initialValue = 1, allocationSize = 1)
-    @Column(name = "ID_CAMINHAO")
-    private Long id;
+    @SequenceGenerator(name = "SEQ_CAMINHAO", sequenceName = "SEQ_CAMINHAO", allocationSize = 1)
+    @Column(name = "id_caminhao")
+    private Long idCaminhao;
 
-    @Column(name = "QTD_ATUAL")
-    private Long qtdAtual;
+    @Column(name = "qtd_atual")
+    private Integer qtdAtual;
 
-    @Column(name = "VL_CAPACIDADE")
-    private Long vlCapacidade;
+    @Column(name = "vl_capacidade")
+    private Integer vlCapacidade;
 
-    @Column(name = "NM_LOCALIZACAO")
+    @Column(name = "nm_localizacao")
     private String nmLocalizacao;
+
 }
