@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AterroRepository extends JpaRepository<Aterro, Long> {
 
-    @Query("SELECT a FROM Aterro a WHERE ST_CAPACIDADE = true ORDER BY a.idAterro")
+    @Query("SELECT a FROM Aterro a WHERE a.stCapacidade = true ORDER BY a.idAterro")
     public List<Aterro> findByStatusTrue();
 
 }
