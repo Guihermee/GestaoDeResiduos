@@ -27,7 +27,7 @@ public class Coleta {
     private String nmLocalizacao;
 
     @ManyToOne
-    @JoinColumn(name = "caminhao")
+    @JoinColumn(name = "T_CAMINHAO_ID_CAMINHAO")
     private Caminhao caminhao;
 
     @Override
@@ -40,9 +40,11 @@ public class Coleta {
                 '}';
     }
 
-
     //
 
+    public Coleta(Long idColeta) {
+        this.idColeta = idColeta;
+    }
 
     public Long getIdColeta() {
         return idColeta;
