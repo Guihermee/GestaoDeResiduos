@@ -1,5 +1,6 @@
 package br.com.fiap.GestaoDeResiduos.advice;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -32,6 +33,14 @@ public class ApplicationExceptionHandler {
         for (FieldError fieldError: fieldErrors) {
             map.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
+        return map;
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler
+    public Map<String, String> handleDataIntegrityViolationException(DataIntegrityViolationException error) {
+        Map<String, String> map = new HashMap<>();
+        map.put("erro", "404 - Id do caminhão digitado não existe!");
         return map;
     }
 }

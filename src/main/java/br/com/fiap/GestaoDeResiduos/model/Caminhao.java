@@ -31,6 +31,9 @@ public class Caminhao {
 
     //
 
+    public Caminhao(Long idCaminhao) {
+        this.idCaminhao = idCaminhao;
+    }
 
     public Long getIdCaminhao() {
         return idCaminhao;

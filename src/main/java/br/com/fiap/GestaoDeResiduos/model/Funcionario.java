@@ -2,6 +2,7 @@ package br.com.fiap.GestaoDeResiduos.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.context.annotation.EnableMBeanExport;
 
 import java.util.Objects;
 
@@ -20,9 +21,8 @@ public class Funcionario {
     @Column(name = "ID_FUNCIONARIO")
     private Long idFuncionario;
 
-   // @Column(name = "ID_CAMINHAO")
     @ManyToOne
-   // @JoinColumn(name = "ID_CAMINHAO")
+    @JoinColumn(name = "T_CAMINHAO_ID_CAMINHAO")
     private Caminhao idCaminhao;
 
     @Column(name = "NM_FUNCIONARIO")
