@@ -28,4 +28,41 @@ public class Caminhao {
     @Column(name = "nm_localizacao")
     private String nmLocalizacao;
 
+
+    //
+
+
+    public Long getIdCaminhao() {
+        return idCaminhao;
+    }
+
+    public void setIdCaminhao(Long idCaminhao) {
+        this.idCaminhao = idCaminhao;
+    }
+
+    public Integer getQtdAtual() {
+        return qtdAtual;
+    }
+
+    public void setQtdAtual(Integer qtdAtual) {
+        this.qtdAtual = qtdAtual;
+    }
+
+    public Integer getVlCapacidade() {
+        return vlCapacidade;
+    }
+
+    public void setVlCapacidade(Integer vlCapacidade) {
+        this.vlCapacidade = vlCapacidade;
+    }
+
+    public String getNmLocalizacao() {
+        return nmLocalizacao;
+    }
+
+    public void setNmLocalizacao(String nmLocalizacao) {
+        this.nmLocalizacao = nmLocalizacao;
+    }
+
+
 }

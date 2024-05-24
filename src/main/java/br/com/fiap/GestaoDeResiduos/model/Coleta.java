@@ -39,4 +39,40 @@ public class Coleta {
                 ", caminhao=" + this.caminhao.getIdCaminhao() +
                 '}';
     }
+
+
+    //
+
+
+    public Long getIdColeta() {
+        return idColeta;
+    }
+
+    public void setIdColeta(Long idColeta) {
+        this.idColeta = idColeta;
+    }
+
+    public Boolean getStColeta() {
+        return stColeta;
+    }
+
+    public void setStColeta(Boolean stColeta) {
+        this.stColeta = stColeta;
+    }
+
+    public String getNmLocalizacao() {
+        return nmLocalizacao;
+    }
+
+    public void setNmLocalizacao(String nmLocalizacao) {
+        this.nmLocalizacao = nmLocalizacao;
+    }
+
+    public Caminhao getCaminhao() {
+        return caminhao;
+    }
+
+    public void setCaminhao(Caminhao caminhao) {
+        this.caminhao = caminhao;
+    }
 }
