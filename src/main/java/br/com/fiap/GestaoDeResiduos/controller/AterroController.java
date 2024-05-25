@@ -17,37 +17,37 @@ public class AterroController {
     @Autowired
     private AterroService aterroService;
 
-    @PostMapping("/aterro")
+    @PostMapping("/aterros")
     @ResponseStatus(HttpStatus.CREATED)
     public AterroExibicaoDto saveAterro(@RequestBody @Valid AterroCadastroDto cadastroDto) {
         return aterroService.saveAterro(cadastroDto);
     }
 
-    @DeleteMapping("/aterro/{id}")
+    @DeleteMapping("/aterros/id/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAterro(@PathVariable Long id) {
         aterroService.deleteAterro(id);
     }
 
-    @PutMapping("/aterro")
+    @PutMapping("/aterros")
     @ResponseStatus(HttpStatus.OK)
     public AterroExibicaoDto updateAterro(@RequestBody AterroCadastroDto aterroDto) {
         return aterroService.updateAterro(aterroDto);
     }
 
-    @GetMapping("/aterro/{id}")
+    @GetMapping("/aterros/id/{id}")
     @ResponseStatus(HttpStatus.OK)
     public AterroExibicaoDto findAterroById(@PathVariable Long id) {
         return aterroService.findAterroById(id);
     }
 
-    @GetMapping("/aterro")
+    @GetMapping("/aterros")
     @ResponseStatus(HttpStatus.OK)
     public List<AterroExibicaoDto> findAllAterro() {
         return aterroService.findAllAterro();
     }
 
-    @GetMapping("/aterro/status")
+    @GetMapping("/aterros/status")
     @ResponseStatus(HttpStatus.OK)
     public List<AterroExibicaoDto> findByStatusTrue() {
         return aterroService.findByStatusTrue();

@@ -3,7 +3,7 @@ package br.com.fiap.GestaoDeResiduos.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public record UsuarioCadatroDto(
+public record UsuarioCadastroDto(
         Long idUsuario,
 
         @NotBlank(message = "Campo nome é obrigatório")

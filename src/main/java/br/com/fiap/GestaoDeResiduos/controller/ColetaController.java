@@ -24,7 +24,7 @@ public class ColetaController {
     }
 
     //Cancelar coleta
-    @DeleteMapping("/coletas/{id}")
+    @DeleteMapping("/coletas/id/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteColeta(@PathVariable Long id){
         coletaService.deleteColeta(id);
@@ -38,7 +38,7 @@ public class ColetaController {
     }
 
     //Listar coletas por ID
-    @GetMapping("/coletas/{id}")
+    @GetMapping("/coletas/id/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ColetaExibicaoDto findColetaById(@PathVariable Long id){
         return coletaService.findColetaById(id);

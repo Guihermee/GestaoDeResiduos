@@ -32,7 +32,7 @@ public class FuncionarioController {
         return funcionarioService.listarTodosOsFuncionarios();
     }
 
-    @DeleteMapping("/funcionarios/{idFuncionario}")
+    @DeleteMapping("/funcionarios/id/{idFuncionario}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void excluirFuncionario(@PathVariable Long idFuncionario){
         funcionarioService.deletarFuncionario(idFuncionario);
@@ -50,7 +50,7 @@ public class FuncionarioController {
         return funcionarioService.buscarFuncionarioPeloNome(nomeFuncionario);
     }
 
-    @GetMapping("/funcionarios/{idFuncionario}")
+    @GetMapping("/funcionarios//id{idFuncionario}")
     @ResponseStatus(HttpStatus.OK)
     public FuncionarioExibicaoDto buscarFuncionarioPeloId(@PathVariable Long idFuncionario){
         return funcionarioService.buscarFuncionarioPorId(idFuncionario);

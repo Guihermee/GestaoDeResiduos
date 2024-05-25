@@ -30,7 +30,6 @@ public class Aterro {
     @Column(name = "ST_CAPACIDADE")
     private Boolean stCapacidade;
 
-
     public Aterro(Long idAterro) {
         this.idAterro = idAterro;
     }

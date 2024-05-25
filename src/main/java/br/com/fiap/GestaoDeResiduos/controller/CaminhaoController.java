@@ -23,7 +23,7 @@ public class CaminhaoController {
         return caminhaoService.saveCaminhao(cadastroDto);
     }
 
-    @DeleteMapping("/caminhoes/{id}")
+    @DeleteMapping("/caminhoes/id/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCaminhao(@PathVariable Long id) {
         caminhaoService.deleteCaminhao(id);
@@ -35,7 +35,7 @@ public class CaminhaoController {
         return caminhaoService.updateCaminhao(cadastroDto);
     }
 
-    @GetMapping("/caminhoes/{id}")
+    @GetMapping("/caminhoes/id/{id}")
     @ResponseStatus(HttpStatus.OK)
     public CaminhaoExibicaoDto findCaminhaoById(@PathVariable Long id) {
         return caminhaoService.findCaminhaoById(id);
