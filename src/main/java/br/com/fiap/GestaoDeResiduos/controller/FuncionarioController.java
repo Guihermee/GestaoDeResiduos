@@ -50,7 +50,7 @@ public class FuncionarioController {
         return funcionarioService.buscarFuncionarioPeloNome(nomeFuncionario);
     }
 
-    @GetMapping("/funcionarios//id{idFuncionario}")
+    @GetMapping("/funcionarios/id/{idFuncionario}")
     @ResponseStatus(HttpStatus.OK)
     public FuncionarioExibicaoDto buscarFuncionarioPeloId(@PathVariable Long idFuncionario){
         return funcionarioService.buscarFuncionarioPorId(idFuncionario);
