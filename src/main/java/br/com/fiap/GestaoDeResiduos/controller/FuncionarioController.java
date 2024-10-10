@@ -9,6 +9,7 @@ import br.com.fiap.GestaoDeResiduos.service.FuncionarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,14 +47,22 @@ public class FuncionarioController {
 
     @GetMapping("/funcionarios/nome/{nomeFuncionario}")
     @ResponseStatus(HttpStatus.OK)
-    public FuncionarioExibicaoDto buscarFuncionarioPeloNome(@PathVariable String nomeFuncionario){
-        return funcionarioService.buscarFuncionarioPeloNome(nomeFuncionario);
+    public ResponseEntity<FuncionarioExibicaoDto> buscarFuncionarioPeloNome(@PathVariable String nomeFuncionario){
+        try {
+            return ResponseEntity.ok(funcionarioService.buscarFuncionarioPeloNome(nomeFuncionario));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/funcionarios/id/{idFuncionario}")
     @ResponseStatus(HttpStatus.OK)
-    public FuncionarioExibicaoDto buscarFuncionarioPeloId(@PathVariable Long idFuncionario){
-        return funcionarioService.buscarFuncionarioPorId(idFuncionario);
+    public ResponseEntity<FuncionarioExibicaoDto> buscarFuncionarioPeloId(@PathVariable Long idFuncionario){
+        try {
+            return ResponseEntity.ok(funcionarioService.buscarFuncionarioPorId(idFuncionario));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

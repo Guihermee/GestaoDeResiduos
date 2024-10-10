@@ -61,6 +61,7 @@ public class SecurityConfig {
                         // Requesições do Funcionario
                         .requestMatchers(HttpMethod.GET, "/api/funcionarios").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/funcionarios/id/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/funcionarios/nome/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/funcionarios").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/funcionarios").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/funcionarios/id/**").hasRole("ADMIN")

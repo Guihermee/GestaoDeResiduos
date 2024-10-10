@@ -2,10 +2,12 @@ package br.com.fiap.GestaoDeResiduos.controller;
 
 import br.com.fiap.GestaoDeResiduos.dto.CaminhaoCadastroDto;
 import br.com.fiap.GestaoDeResiduos.dto.CaminhaoExibicaoDto;
+import br.com.fiap.GestaoDeResiduos.model.Caminhao;
 import br.com.fiap.GestaoDeResiduos.service.CaminhaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,8 +39,12 @@ public class CaminhaoController {
 
     @GetMapping("/caminhoes/id/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CaminhaoExibicaoDto findCaminhaoById(@PathVariable Long id) {
-        return caminhaoService.findCaminhaoById(id);
+    public ResponseEntity<CaminhaoExibicaoDto> findCaminhaoById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(caminhaoService.findCaminhaoById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/caminhoes")

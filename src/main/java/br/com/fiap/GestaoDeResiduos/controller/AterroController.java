@@ -6,6 +6,7 @@ import br.com.fiap.GestaoDeResiduos.service.AterroService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,8 +38,12 @@ public class AterroController {
 
     @GetMapping("/aterros/id/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public AterroExibicaoDto findAterroById(@PathVariable Long id) {
-        return aterroService.findAterroById(id);
+    public ResponseEntity<AterroExibicaoDto> findAterroById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(aterroService.findAterroById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/aterros")

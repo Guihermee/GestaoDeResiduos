@@ -5,6 +5,7 @@ import br.com.fiap.GestaoDeResiduos.dto.ColetaExibicaoDto;
 import br.com.fiap.GestaoDeResiduos.service.ColetaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,8 +41,12 @@ public class ColetaController {
     //Listar coletas por ID
     @GetMapping("/coletas/id/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ColetaExibicaoDto findColetaById(@PathVariable Long id){
-        return coletaService.findColetaById(id);
+    public ResponseEntity<ColetaExibicaoDto> findColetaById(@PathVariable Long id){
+        try {
+            return ResponseEntity.ok(coletaService.findColetaById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     //Listar todas as coletas
@@ -53,8 +58,12 @@ public class ColetaController {
 
     @GetMapping("coletas/localizacao/{nmLocalizacao}")
     @ResponseStatus(HttpStatus.OK)
-    public ColetaExibicaoDto findColetaByLocalizacao (@PathVariable String nmLocalizacao){
-        return coletaService.findColetaByLocalizacao(nmLocalizacao);
+    public ResponseEntity<ColetaExibicaoDto> findColetaByLocalizacao (@PathVariable String nmLocalizacao){
+        try {
+            return ResponseEntity.ok(coletaService.findColetaByLocalizacao(nmLocalizacao));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 
