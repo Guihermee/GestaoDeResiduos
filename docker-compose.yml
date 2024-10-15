@@ -6,5 +6,5 @@ services:
     environment:
       - PROFILE=prd
       - DATABASE_URL=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
-      - DATABASE_USER=RM550479
-      - DATABASE_PWD=051202
+      - DATABASE_USER=RM99371
+      - DATABASE_PWD=221103
