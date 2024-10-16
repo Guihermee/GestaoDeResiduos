@@ -6,6 +6,7 @@ import br.com.fiap.GestaoDeResiduos.service.RotaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,8 +38,12 @@ public class RotaController {
 
     @GetMapping("/rotas/id/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public RotaExibicaoDto findRotaById(@PathVariable Long id) {
-        return rotaService.findRotaById(id);
+    public ResponseEntity<RotaExibicaoDto> findRotaById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(rotaService.findRotaById(id));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/rotas")

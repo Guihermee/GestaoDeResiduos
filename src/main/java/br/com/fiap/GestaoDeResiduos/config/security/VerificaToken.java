@@ -39,9 +39,13 @@ public class VerificaToken extends OncePerRequestFilter {
             String login = tokenService.validarToken(token);
             UserDetails usuario = usuarioRepository.findByEmail(login);
 
-            UsernamePasswordAuthenticationToken authenticationToken =
-                    new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+            if (usuario == null) {
+
+            } else {
+                UsernamePasswordAuthenticationToken authenticationToken =
+                        new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+            }
         }
 
         filterChain.doFilter(request, response);

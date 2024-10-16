@@ -36,11 +36,11 @@ public class ApplicationExceptionHandler {
         return map;
     }
 
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    @ExceptionHandler
-//    public Map<String, String> handleDataIntegrityViolationException(DataIntegrityViolationException error) {
-//        Map<String, String> map = new HashMap<>();
-//        map.put("erro", "404 - Id do caminhão digitado não existe!");
-//        return map;
-//    }
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler
+    public Map<String, String> handleDataIntegrityViolationException (DataIntegrityViolationException error) {
+        Map<String, String> map = new HashMap<>();
+        map.put("erro", error.getMessage());
+        return map;
+    }
 }
