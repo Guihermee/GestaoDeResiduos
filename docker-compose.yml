@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   api:
-    image: xpgui/api-gestao-de-residuos:latest
+    image: .
     ports:
       - "8080:8080"
     environment:
