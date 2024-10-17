@@ -43,8 +43,14 @@ jobs:
       - name: Deploy with Docker Compose to Azure Web App
         run: |
           az webapp config container set \
-            --resource-group ${{ secrets.RESOURCE_GROUP }} \
+            --resource-group gestaoderesiduos \
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
-            --multicontainer-config-file ./docker-compose.yml \
-            --multicontainer-config-type COMPOSE
+            --docker-custom-image-name ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest \
+            --docker-registry-server-url https://index.docker.io/v1/ \
+            --docker-registry-server-user ${{ secrets.DOCKER_USERNAME }} \
+            --docker-registry-server-password ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Restart Azure Web App
+        run: |
+          az webapp restart --resource-group gestaoderesiduos --name ${{ secrets.AZURE_WEBAPP_NAME }}
 
