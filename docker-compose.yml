@@ -10,3 +10,4 @@ services:
       - DATABASE_URL=jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
       - DATABASE_USER=RM99371
       - DATABASE_PWD=221103
+
