@@ -47,7 +47,7 @@ jobs:
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
             --docker-custom-image-name ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest \
             --docker-registry-server-url https://index.docker.io/v1/ \
-            --docker-registry-server-user ${{ secrets.DOCKER_USERNAME }} \
+            --docker-registry-server-user ${{ secrets.DOCKERHUB_USERNAME }} \
             --docker-registry-server-password ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Restart Azure Web App
