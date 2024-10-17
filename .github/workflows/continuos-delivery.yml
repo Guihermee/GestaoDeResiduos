@@ -42,4 +42,7 @@ jobs:
 
       - name: Deploy with Docker Compose to Azure Web App
         run: |
-          az webapp config container set --resource-group gestaoderesiduos --name ${{ secrets.AZURE_WEBAPP_NAME }} --docker-custom-image-name ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest --docker-compose-file docker-compose.yml
+          az webapp config container set \
+            --resource-group ${{ env.RESOURCE_GROUP }} \
+            --name ${{ secrets.AZURE_WEBAPP_NAME }} \
+            --docker-custom-image-name ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
