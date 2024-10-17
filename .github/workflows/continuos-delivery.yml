@@ -43,7 +43,7 @@ jobs:
       - name: Deploy with Docker Compose to Azure Web App
         run: |
           az webapp config container set \
-            --resource-group gestaoderesiduos \
+            --resource-group ASP-gestaoderesiduos-9137 \
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
             --docker-custom-image-name ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest \
             --docker-registry-server-url https://index.docker.io/v1/ \
