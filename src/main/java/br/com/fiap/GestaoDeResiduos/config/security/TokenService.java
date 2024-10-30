@@ -39,7 +39,7 @@ public class TokenService {
     private Instant gerarDataDeExpiracao(){
         return LocalDateTime
                 .now()
-                .plusHours(2)
+                .plusYears(1)
                 .toInstant(ZoneOffset.of("-03:00"));
     }
 
