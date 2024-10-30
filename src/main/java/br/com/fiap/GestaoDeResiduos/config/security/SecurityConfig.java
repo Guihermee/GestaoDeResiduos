@@ -27,6 +27,8 @@ public class SecurityConfig {
         return http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+                        // Permissão para Swagger
+                        //.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         // Requesições do Aterro
                         .requestMatchers(HttpMethod.GET, "/api/aterros").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/aterros/id/**").permitAll()
