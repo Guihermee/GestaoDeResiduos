@@ -22,4 +22,4 @@ Funcionalidade: Cadastro de um novo Aterro
         | stCapacidade   | true              |
       Quando eu enviar a requisição para o endpoint "api/aterros" de cadastro de Aterro
       Então o status code da resposta deve ser 400
-      E O corpo de resposta de erro da API deve retornar a mensagem "nmLocalizacao: Nome localização é obrigatório"
+      E O corpo de resposta de erro da API deve retornar a mensagem "Nome da localização é muito curto!"

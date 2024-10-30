@@ -14,7 +14,7 @@ public class CreateCaminhaoService {
             .excludeFieldsWithoutExposeAnnotation()
             .create();
     public Response response;
-    String baseUrl = "http://localhost:8080";
+    String baseUrl = "http://localhost:8080/";
 
     public void setFieldsCaminhao(String field, String value) {
         switch (field) {
@@ -26,7 +26,7 @@ public class CreateCaminhaoService {
     }
 
     public void createCaminhao(String endPoint) {
-        String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW9EZVJlc2lkdW9zIiwic3ViIjoieHBndWlAb3V0bG9vay5jb20iLCJleHAiOjE3MzAyNTcxMzV9.9Gjl5XMs6_t9PTJN_nO5eTTLR-pJZBilfZ8A6_DXtIY";
+        String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW9EZVJlc2lkdW9zIiwic3ViIjoieHBndWlAb3V0bG9vay5jb20iLCJleHAiOjE3NjE4NjQ2ODF9.-Ve0sPDtLiE0rsz7uxSnehYbqUalUOWcjlJXIgDniUg";
         String url = baseUrl + endPoint;
         String bodyToSend = gson.toJson(caminhao);
         response = given()

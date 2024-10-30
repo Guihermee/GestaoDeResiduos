@@ -4,7 +4,7 @@ import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
-import model.ErrorMessageModel;
+import model.ErrorMessageNmLocalizacaoModel;
 import org.junit.Assert;
 import services.CreateAterroService;
 
@@ -33,9 +33,9 @@ public class CreateAterroSteps {
 
     @E("O corpo de resposta de erro da API deve retornar a mensagem {string}")
     public void oCorpoDeRespostaDeErroDaAPIDeveRetornarAMensagem(String messageError) {
-        ErrorMessageModel errorMessageModel = service.gson.fromJson(
-                service.response.jsonPath().prettify(), ErrorMessageModel.class
+        ErrorMessageNmLocalizacaoModel errorMessageModel = service.gson.fromJson(
+                service.response.jsonPath().prettify(), ErrorMessageNmLocalizacaoModel.class
         );
-        Assert.assertEquals(messageError, errorMessageModel.getMessage());
+        Assert.assertEquals(messageError, errorMessageModel.getNmLocalizacao());
     }
 }

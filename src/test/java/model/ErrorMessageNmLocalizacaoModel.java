@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 import lombok.Data;
 
 @Data
-public class ErrorMessageModel {
+public class ErrorMessageNmLocalizacaoModel {
     @Expose
-    private String message;
+    private String nmLocalizacao;
 }

@@ -8,5 +8,5 @@ Funcionalidade: Cadastro de novo caminhão
       | campo          | valor                 |
       | vlCapacidade   | 1000                  |
       | nmLocalizacao  | "Um lugar silencioso" |
-    Quando eu enviar a requisição para o endpoint "/caminhoes" de cadastro de caminhões
+    Quando eu enviar a requisição para o endpoint "api/caminhoes" de cadastro de caminhões
     Então o status code na resposta deve ser 201
