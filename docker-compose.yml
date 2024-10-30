@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api:
     image: xpgui/api-gestao-de-residuos:latest
