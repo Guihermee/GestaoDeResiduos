@@ -46,7 +46,7 @@ public class CreateCaminhaoService {
     }
 
     public void createCaminhao(String endPoint) {
-        String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW9EZVJlc2lkdW9zIiwic3ViIjoibWFyY2VsaW5lQGhvdG1haWwuY29tIiwiZXhwIjoxNzYxODU4ODQ4fQ.IN8mThEMJKqI6sNoT5rbXAflrUi8M8PEgEuP7CGgcjo";
+        String bearerToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnZXN0YW9EZVJlc2lkdW9zIiwic3ViIjoieHBndWlAb3V0bG9vay5jb20iLCJleHAiOjE3NjE4NjQ2ODF9.-Ve0sPDtLiE0rsz7uxSnehYbqUalUOWcjlJXIgDniUg";
         String url = baseUrl + endPoint;
         String bodyToSend = gson.toJson(caminhao);
         response = given()

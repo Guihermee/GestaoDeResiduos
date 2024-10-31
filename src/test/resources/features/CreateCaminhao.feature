@@ -16,7 +16,7 @@ Funcionalidade: Cadastro de novo caminhão
     Dado que eu tenha os seguintes dados do caminhão:
       | campo          | valor                 |
       | qtdAtual       | 2                     |
-      | vlCapacidade   | 19                      |
+      | vlCapacidade   | 19                     |
       | nmLocalizacao  | Aqu                   |
     Quando eu enviar a requisição para o endpoint "/caminhoes" de cadastro de caminhões
     Então o status code na resposta deve ser 400
