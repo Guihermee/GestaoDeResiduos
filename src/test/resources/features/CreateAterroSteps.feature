@@ -22,4 +22,4 @@ Funcionalidade: Cadastro de um novo Aterro
         | stCapacidade   | true              |
       Quando eu enviar a requisição para o endpoint "api/aterros" de cadastro de Aterro
       Então o status code da resposta deve ser 400
-      E O corpo de resposta de erro da API deve retornar a mensagem "Nome da localização é muito curto!"
+      E O corpo de resposta de erro da API de aterro deve retornar a mensagem "Nome da localização é muito curto!"

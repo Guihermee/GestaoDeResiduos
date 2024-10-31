@@ -1,0 +1,62 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1730320938.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "idAterro",
+    "qtdAtual",
+    "qtdAterro",
+    "nmLocalizacao",
+    "stCapacidade"
+  ],
+  "properties": {
+    "idAterro": {
+      "$id": "#root/idAterro",
+      "title": "Idaterro",
+      "type": "integer",
+      "examples": [
+        14
+      ],
+      "default": 0
+    },
+    "qtdAtual": {
+      "$id": "#root/qtdAtual",
+      "title": "Qtdatual",
+      "type": "integer",
+      "examples": [
+        50
+      ],
+      "default": 0
+    },
+    "qtdAterro": {
+      "$id": "#root/qtdAterro",
+      "title": "Qtdaterro",
+      "type": "integer",
+      "examples": [
+        120
+      ],
+      "default": 0
+    },
+    "nmLocalizacao": {
+      "$id": "#root/nmLocalizacao",
+      "title": "Nmlocalizacao",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "testes"
+      ],
+      "pattern": "^.*$"
+    },
+    "stCapacidade": {
+      "$id": "#root/stCapacidade",
+      "title": "Stcapacidade",
+      "type": "boolean",
+      "examples": [
+        true
+      ],
+      "default": true
+    }
+  }
+}

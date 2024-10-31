@@ -31,8 +31,8 @@ public class CreateCaminhaoSteps {
         Assert.assertEquals(statusCode, service.response.statusCode());
     }
 
-    @E("o corpo de resposta de erro da api deve retornar a mensagem {string}")
-    public void oCorpoDeRespostaDeErroDaApiDeveRetornarAMensagem(String message) {
+    @E("o corpo de resposta de erro do caminhão da api deve retornar a mensagem {string}")
+    public void oCorpoDeRespostaDeErroDoCaminhãoDaApiDeveRetornarAMensagem(String message) {
         ErrorMessageModel errorMessageModel = service.gson.fromJson(
                 service.response.jsonPath().prettify(), ErrorMessageModel.class);
         Assert.assertEquals(message, errorMessageModel.getMessage());

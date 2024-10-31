@@ -20,4 +20,4 @@ Funcionalidade: Cadastro de novo caminhão
       | nmLocalizacao  | Um lugar silencioso   |
     Quando eu enviar a requisição para o endpoint "/caminhoes" de cadastro de caminhões
     Então o status code na resposta deve ser 400
-    E o corpo de resposta de erro da api deve retornar a mensagem "A capacidade não pode ser igual a zero."
+    E o corpo de resposta de erro do caminhão da api deve retornar a mensagem "A capacidade não pode ser igual a zero."
