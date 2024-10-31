@@ -16,8 +16,8 @@ Funcionalidade: Cadastro de novo caminhão
     Dado que eu tenha os seguintes dados do caminhão:
       | campo          | valor                 |
       | qtdAtual       | 2                     |
-      | vlCapacidade   | 0                     |
-      | nmLocalizacao  | Um lugar silencioso   |
+      | vlCapacidade   | 19                      |
+      | nmLocalizacao  | Aqu                   |
     Quando eu enviar a requisição para o endpoint "/caminhoes" de cadastro de caminhões
     Então o status code na resposta deve ser 400
-    E o corpo de resposta de erro do caminhão da api deve retornar a mensagem "A capacidade não pode ser igual a zero."
+    E o corpo de resposta de erro do caminhão da api deve retornar a mensagem "Campo deve conter no minimo 4 caracteres"

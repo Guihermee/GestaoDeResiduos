@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 public class ErrorMessageModel {
     @Expose
-    private String message;
+    private String nmLocalizacao;
 }

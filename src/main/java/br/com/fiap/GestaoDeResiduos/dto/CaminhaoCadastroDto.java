@@ -15,6 +15,4 @@ public record CaminhaoCadastroDto(
         Integer vlCapacidade,
 
         @NotBlank(message = "Campo nmLocalizacao é obrigatório")
-        String nmLocalizacao
-) {
-}
+        @Size(min = 4, message = "C

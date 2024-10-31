@@ -1,0 +1,52 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1730335311.json",
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "idCaminhao",
+    "qtdAtual",
+    "vlCapacidade",
+    "nmLocalizacao"
+  ],
+  "properties": {
+    "idCaminhao": {
+      "$id": "#root/idCaminhao",
+      "title": "Idcaminhao",
+      "type": "integer",
+      "examples": [
+        11
+      ],
+      "default": 0
+    },
+    "qtdAtual": {
+      "$id": "#root/qtdAtual",
+      "title": "Qtdatual",
+      "type": "integer",
+      "examples": [
+        2
+      ],
+      "default": 0
+    },
+    "vlCapacidade": {
+      "$id": "#root/vlCapacidade",
+      "title": "Vlcapacidade",
+      "type": "integer",
+      "examples": [
+        19
+      ],
+      "default": 0
+    },
+    "nmLocalizacao": {
+      "$id": "#root/nmLocalizacao",
+      "title": "Nmlocalizacao",
+      "type": "string",
+      "default": "",
+      "examples": [
+        "Aqui"
+      ],
+      "pattern": "^.*$"
+    }
+  }
+}
